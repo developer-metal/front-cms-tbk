@@ -1,0 +1,7 @@
+{
+  "name": "front-cms",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
