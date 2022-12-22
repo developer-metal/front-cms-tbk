@@ -1,18 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ImageInterface } from '../interfaces/image-interface';
+import { ImageService } from '../services/image.service';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit{
 
   public slideOpts: any = {
     initialSlide: 0,
     direction: "vertical",
     speed: 400
   };
-  constructor() {}
+  constructor(private imageService: ImageService) {
+  }
+
+  ngOnInit(): void {
+    this.getImageAction();
+  }
+  
 
   darkAction(data:any): void {
     if (data.detail.checked) {
@@ -22,4 +31,11 @@ export class Tab1Page {
       document.body.setAttribute('color-theme','light');
     }
   }
+
+  getImageAction(): void {
+    this.imageService.getImages().subscribe((data)=> {
+       console.log(data);
+    });
+  }
+  
 }
