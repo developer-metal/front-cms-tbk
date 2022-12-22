@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ImageInterface } from '../interfaces/image-interface';
 
@@ -18,6 +18,8 @@ export class ImageService {
 
 
   getImages(): Observable<ImageInterface[]>{
-    return this.http.get<ImageInterface[]>(`${this.url}/media`, this.httpHeader)
+    return this.http.get<any>(`${this.url}/media`, this.httpHeader).pipe(
+      map(data => data.docs)
+    )
   }
 }

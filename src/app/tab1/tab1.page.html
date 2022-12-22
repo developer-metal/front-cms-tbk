@@ -7,15 +7,9 @@
   </ion-toolbar>
 </ion-header>
   <ion-content [fullscreen]="true">
-    <ion-slides pager="true" [options]="slideOpts">
+    <ion-slides pager="true" [options]="slideOpts" *ngFor="let image of imageList">
       <ion-slide>
-        <h1>Slide 1</h1>
-      </ion-slide>
-      <ion-slide>
-        <h1>Slide 2</h1>
-      </ion-slide>
-      <ion-slide>
-        <h1>Slide 3</h1>
+        <ion-img src= {{image.url}}></ion-img>
       </ion-slide>
     </ion-slides>
   </ion-content>

@@ -10,6 +10,8 @@ import { ImageService } from '../services/image.service';
 })
 export class Tab1Page implements OnInit{
 
+  public imageList: Array<ImageInterface> = [];
+
   public slideOpts: any = {
     initialSlide: 0,
     direction: "vertical",
@@ -35,6 +37,7 @@ export class Tab1Page implements OnInit{
   getImageAction(): void {
     this.imageService.getImages().subscribe((data)=> {
        console.log(data);
+       this.imageList = data;
     });
   }
   
