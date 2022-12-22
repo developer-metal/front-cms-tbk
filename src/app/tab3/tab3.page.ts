@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
+  public slideOpts: any = {
+    initialSlide: 0,
+    speed: 400
+  };
   constructor() {}
 
 }
