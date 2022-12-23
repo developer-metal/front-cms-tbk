@@ -2,3 +2,12 @@ ion-slides {
     height: 100%;
     
   }
+  ion-title {
+    &.md {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        height: 0;
+        text-align: center;
+    }
+}

@@ -1,20 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Home
+      Images
     </ion-title>
   </ion-toolbar>
 </ion-header>
-  <ion-content [fullscreen]="true">
-    <ion-slides pager="true" [options]="slideOpts">
-      <ion-slide>
-        <h1>Slide 1</h1>
-      </ion-slide>
-      <ion-slide>
-        <h1>Slide 2</h1>
-      </ion-slide>
-      <ion-slide>
-        <h1>Slide 3</h1>
-      </ion-slide>
-    </ion-slides>
-  </ion-content>
+<ion-content [fullscreen]="true">
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let document of data$ | async;">
+      <ion-img src="{{document.url}}" size="50"></ion-img>
+      <!--<ion-title>
+        {{document.title}}
+        {{document.description}}
+        {{document.date.split("T")[0] }}
+      </ion-title>-->
+    </ion-slide>
+  </ion-slides>
+</ion-content>
