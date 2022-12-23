@@ -9,7 +9,7 @@
   <ion-content [fullscreen]="true">
     <ion-slides pager="true" [options]="slideOpts">
       <ion-slide *ngFor="let document of data$ | async;">
-        <ion-img src="{{document.url}}" size="50"></ion-img>
+        <ion-img src="{{document.url}}" size="50"></ion-img><!---->
         <!--<ion-title>
           {{document.title}}
           {{document.description}}
