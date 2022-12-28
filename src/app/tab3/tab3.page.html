@@ -1,19 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Video
+      Videos
     </ion-title>
+    <!--<ion-toggle slot="end" (ionChange)="darkAction($event)"></ion-toggle>-->
   </ion-toolbar>
 </ion-header>
   <ion-content [fullscreen]="true">
     <ion-slides pager="true" [options]="slideOpts">
-      <ion-slide *ngFor="let document of data$ | async;">
-        <ion-img src="{{document.url}}" size="50"></ion-img>
-        <!--<ion-title>
+    <ion-slide *ngFor="let document of data$ | async;">
+      <ion-list lines="none">
+    <ion-img src="{{document.url}}"></ion-img>
+  
+      <ion-item lines="none">
+        <ion-label>
           {{document.title}}
+        </ion-label>
+        <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>
           {{document.description}}
+        </ion-label>
+        <ion-icon name="document-text-outline" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>
           {{document.date.split("T")[0] }}
-        </ion-title>-->
+        </ion-label>
+        <ion-icon name="time" slot="start"></ion-icon>
+      </ion-item>
+    </ion-list>
       </ion-slide>
     </ion-slides>
   </ion-content>

@@ -16,7 +16,8 @@ export class Tab1Page implements OnInit {
     initialSlide: 0,
     direction: "vertical",
     pagination: false,
-    speed: 400
+    speed: 400,
+    
   };
 
   constructor(private documentService: ResourcesProviderService) {
