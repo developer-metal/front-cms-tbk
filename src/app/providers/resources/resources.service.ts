@@ -23,7 +23,7 @@ export class ResourcesService {
 
   public getDataResourcess(): Observable<any> {
     return this.httpClientService
-      .get<ResourcesCMS[]>(`${this.apiURL}/media`)
+      .get<ResourcesCMS[]>(`${this.apiURL}media`)
       .pipe(catchError(() => this.errorWithTimestamp));
   }
 }
